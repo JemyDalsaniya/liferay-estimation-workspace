@@ -2,7 +2,7 @@
 
 ## 1. Create Liferay Workspace
 
-- Download the Liferay workspace from [here](https://github.com/JemyDalsaniya/liferay-estimation-workspace).
+- Download the Liferay workspace from [here]().
 
 ## 2. Create Classic Theme in Liferay
 
@@ -80,7 +80,14 @@
 - Navigate to Design -> Fragments.
 - Create new fragment set
     - Create new fragment inside created fragment set
-    - Example
+      ![Screenshot from 2024-01-19 16-45-50](https://github.com/JemyDalsaniya/liferay-estimation-workspace/assets/100910972/ab77ac6f-6f50-495e-9eac-613b7cce3fe2)
+      List of custom components created using Tailwind CSS and Flowbite are :
+      1. Card
+      2. Accordion
+      3. Buttons
+      4. Form
+      
+      Example : 
         - create fragment for different buttons
             -  Add HTMl,JavaScript,CSS code for buttons inside it's respective sections
 
@@ -114,7 +121,15 @@
   ![Screenshot from 2024-01-19 11-17-57](https://github.com/riddhi-Jani123/testing/assets/100912019/955da7e6-66ac-4a60-9d6c-bf2939e2787c)
 
 - Create a master page template.
-- Drag and drop the fragments of the header and footerandl also the fragments we have created in earlier step.
+- Drag and drop the fragments of the header and footer and also the fragments we have created in earlier step.
 - Use the template to create a page.
+- Inside "liferay-estimation-workspace" there will be template called "Custom Template" and
+- also there will be a page called "Components Page" having all the required components and which is created from "Custom Template"
+  - List of components:
+    1. Card
+    2. Accordion
+    3. Buttons
+    4. Form
+    
 
 **Note:** Replace `<link_to_download_liferay_workspace>` and `<your_theme_name>` with the appropriate values.
