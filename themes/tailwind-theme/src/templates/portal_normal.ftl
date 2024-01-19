@@ -11,10 +11,18 @@
 
 	<@liferay_util["include"] page=top_head_include />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-
+	<link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+	<script>
+		// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
+	</script>
 </head>
 
-<body class="${css_class}">
+<body class="${css_class} dark:bg-gray-900">
 
 <@liferay_ui["quick-access"] contentId="#main-content" />
 
@@ -106,10 +114,74 @@
 <@liferay_util["include"] page=bottom_include />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 <script>
+	//Manage Buttons for Hide/Show content
+	const titleToggle = document.getElementById('titleToggle');
+	const descriptionToggle = document.getElementById('descriptionToggle');
+	const dropzoneToggle = document.getElementById('dropzoneToggle');
+	const titleContent = document.getElementById('titleContent');
+	const descriptionContent = document.getElementById('descriptionContent');
+	const dropzoneContent = document.getElementById('dropzoneContent');
+
+	titleToggle.addEventListener('click', function () {
+		titleContent.classList.toggle('hidden');
+	});
+
+	descriptionToggle.addEventListener('click', function () {
+		descriptionContent.classList.toggle('hidden');
+	});
+
+	dropzoneToggle.addEventListener('click', function () {
+		dropzoneContent.classList.toggle('hidden');
+	});
+</script>
+<script>
+	//Manage Dark/Light Mode
+	var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+	var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+	// Change the icons inside the button based on previous settings
+	if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		themeToggleLightIcon.classList.remove('hidden');
+	} else {
+		themeToggleDarkIcon.classList.remove('hidden');
+	}
+
+	var themeToggleBtn = document.getElementById('theme-toggle');
+
+	themeToggleBtn.addEventListener('click', function() {
+
+		// toggle icons inside button
+		themeToggleDarkIcon.classList.toggle('hidden');
+		themeToggleLightIcon.classList.toggle('hidden');
+
+		// if set via local storage previously
+		if (localStorage.getItem('color-theme')) {
+			if (localStorage.getItem('color-theme') === 'light') {
+				document.documentElement.classList.add('dark');
+				localStorage.setItem('color-theme', 'dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+				localStorage.setItem('color-theme', 'light');
+			}
+
+			// if NOT set via local storage previously
+		} else {
+			if (document.documentElement.classList.contains('dark')) {
+				document.documentElement.classList.remove('dark');
+				localStorage.setItem('color-theme', 'light');
+			} else {
+				document.documentElement.classList.add('dark');
+				localStorage.setItem('color-theme', 'dark');
+			}
+		}
+
+	});
+</script>
+<script>
+	//Manage RTL/LTR
 	var wrapperList = document.querySelectorAll(".directionButtonWrapper");
 
 	wrapperList.forEach((element) => {
-		console.log(element, "ele")
 		const dirButton = element.querySelector(".dirButton")
 		const changeDirButton = element.querySelector(".changeDirButton")
 
