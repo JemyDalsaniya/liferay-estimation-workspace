@@ -1,0 +1,55 @@
+
+ <div class="directionButtonWrapper ">
+<button value="RTL"
+            class="dirButton bg-indigo p-3 w-40 text-white rounded">RTL</button>
+	 <div class="max-w-md mx-auto bg-white p-8 rounded outline mb-5 shadow-md changeDirButton" dir="ltr">
+        <h2 class="text-2xl font-semibold mb-6">[@liferay.language key="form" /]</h2>
+        <div class="mb-4">
+            <div class="flex items-center">
+                <div class="w-full bg-gray-200 rounded-full">
+                    <div id="progressBar" class="h-2 bg-blue-500 rounded-full" style="width: 0;"></div>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <span id="progressLabel" class="text-sm font-semibold text-gray-700">Step 1 of 3</span>
+            </div>
+        </div>
+        <form id="wizardForm" class="space-y-4">
+            <!-- Step 1 -->
+            <div class="step" data-step="1">
+                <label for="firstName" class="block text-sm font-medium text-gray-700">[@liferay.language key="first-name" /]</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md">
+							 <label for="lastName" class="block text-sm font-medium text-gray-700">[@liferay.language key="last-name" /]</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md">
+                <button type="button" class="next-btn mt-4 bg-blue-500 text-white p-2 rounded-md">[@liferay.language key="next" /]</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step hidden" data-step="2">
+                <label for="email" class="block text-sm font-medium text-gray-700">[@liferay.language key="email" /]</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md">
+							  <label for="email" class="block text-sm font-medium text-gray-700">[@liferay.language key="contact" /]</label>
+                <input type="text" id="email" name="contact" class="mt-1 p-2 w-full border rounded-md">
+                <button type="button" class="prev-btn mt-4 mr-4 bg-gray-500 text-white p-2 rounded-md">[@liferay.language key="previous" /]</button>
+                <button type="button" class="next-btn mt-4 bg-blue-500 text-white p-2 rounded-md">[@liferay.language key="next" /]</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step hidden" data-step="3">
+                <label for="password" class="block text-sm font-medium text-gray-700">[@liferay.language key="password" /]</label>
+                <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+							<label for="confirmPassword" class="block text-sm font-medium text-gray-700">[@liferay.language key="confirm-password" /]</label>
+                <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+                <button type="button" class="prev-btn mt-4 mr-4 bg-gray-500 text-white p-2 rounded-md">[@liferay.language key="previous" /]</button>
+                <button type="submit" class="bg-green-500 text-white p-2 rounded-md">[@liferay.language key="submit" /]</button>
+            </div>
+
+            <!-- Thank You Message -->
+            <div id="thankYou" class="hidden">
+                <p class="text-green-500 text-lg font-semibold">[@liferay.language key="thank-you.-your-information-was-successfully-received" /]</p>
+            </div>
+        </form>
+
+    </div>
+	</div>
+
