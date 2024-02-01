@@ -91,7 +91,9 @@
         - create fragment for different buttons
             -  Add HTMl,JavaScript,CSS code for buttons inside it's respective sections
 
-  ###### Note: We need to change one setting enable from Control Panel -> System Settings -> Page Fragments make all the checkbox enable
+  ###### Note: 
+ 1. We need to change one setting enable from Control Panel -> System Settings -> Page Fragments make all the checkbox enable
+ 2. Please find the Fragment code inside fragment_scripts directory
 
 
 ## 4. Create Master Page Template
