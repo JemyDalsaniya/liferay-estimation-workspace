@@ -93,7 +93,7 @@
 
   ###### Note: 
  1. We need to change one setting enable from Control Panel -> System Settings -> Page Fragments make all the checkbox enable
- 2. Please find the Fragment code inside fragment_scripts directory
+ 2. Please find the Fragment code inside [fragment_script](https://github.com/JemyDalsaniya/liferay-estimation-workspace/tree/inexture-liferay/fragment_script) directory
 
 
 ## 4. Create Master Page Template
